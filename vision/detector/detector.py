@@ -36,10 +36,16 @@ class PersonDetector:
 
                 confidence = float(box.conf[0])
 
-                detection.append({
-                    "bbox":(x1,y1,x2,y2),
-                    "confidence":confidence
-                })
+                detection.append(
+                                [
+                                    x1,
+                                    y1,
+                                    x2,
+                                    y2,
+                                    confidence,
+                                    class_id
+                                ]
+                            )
         return detection
     
 
